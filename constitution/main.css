@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+/*
+:root {
+    --text-block-bg-color: #171717;
+    --main-bg-color: #000000;
+    --headline-color: #ddd;
+    --main-text-color: #9f9f9f;
+    --rule-color: #ff3535;
+    --chat-color: #3b5af5;
+    --user-color: #f5a43b;
+    --user-admin-color: #f5733b;
+}
+*/
+.theme-light {
+    --text-block-bg-color: #c9c9c9;
+    --main-bg-color: #eaeaea;
+    --headline-color: #101010;
+    --main-text-color: #383838;
+    --rule-color: #ff3535;
+    --chat-color: #3b5af5;
+    --user-color: #f5a43b;
+    --user-admin-color: #f5733b;
+    --switcher-content: "🌑";
+}
+
+.theme-dark {
+    --text-block-bg-color: #383838;
+    --main-bg-color: #262626;
+    --headline-color: #ddd;
+    --main-text-color: #9f9f9f;
+    --rule-color: #ff3535;
+    --chat-color: #3b5af5;
+    --user-color: #f5a43b;
+    --user-admin-color: #f5733b;
+    --switcher-content: "☀️";
+}
+
+html {
+    color: var(--main-text-color);
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--main-bg-color);
+}
+
+h1, h2, h3, h4 {
+    color: var(--headline-color);
+    margin-top: 60px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--main-text-color);
+}
+
+.link-hover {
+    color: var(--main-text-color);
+    transition-duration: 0.1s;
+}
+.link-hover:hover {
+    color: var(--headline-color);
+}
+
+.headline {
+    color: var(--headline-color);
+}
+.rule {
+    color: var(--rule-color);
+}
+.chat {
+    color: var(--chat-color);
+}
+.user {
+    color: var(--user-color);
+}
+.user-admin {
+    color: var(--user-admin-color);
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 0 5%;
+}
+
+p {
+    color: var(--main-text-color);
+    line-height: 20px;
+}
+
+.main-middle-container {
+    max-width: 70%;
+    margin-left: 20%;
+}
+
+.main-left-container {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    height: 100vh;
+    max-width: 18%;
+
+}
+
+.main-element {
+    position: relative;
+}
+
+.example {
+    margin-left: 25px;
+}
+
+h2::before {
+    color: var(--main-text-color);
+    position: absolute;
+    content: "#";
+    left: -23px;
+}
+
+.example-before::before {
+    color: var(--main-text-color);
+    position: absolute;
+    content: "•";
+    left: 12px;
+}
+
+.span-before {
+    color: #676767;
+}
+
+.span-before::before {
+    color: #676767;
+    position: absolute;
+    content: "#";
+    left: -16px;
+}
+
+.example-p {
+    padding: 2px 5px;
+    border-radius: 3px;
+    position: relative;
+    background-color: var(--text-block-bg-color);
+}
+
+.for-mobile {
+    display: none;
+}
+
+.link-discord-mobile {
+    display: none;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 13px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: none;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--text-block-bg-color);
+}
+
+.switcher {
+    box-shadow: none;
+    color: var(--headline-color);
+    background-color: var(--main-bg-color);
+    content: var(--switcher-content);
+    border: 2px var(--headline-color) solid;
+    border-radius: 3px;
+    padding: 7px 11px;
+    margin: 1%;
+    cursor: pointer;
+    width: auto;
+    height: auto;
+    transition-duration: 0.1s;
+}
+
+.left-left {
+    display: flex;
+    justify-content: space-around;
+}
+
+.switcher:hover {
+    background-color: var(--headline-color);
+    color: var(--main-bg-color);
+}
+
+@media (orientation: portrait) {
+    main {
+        flex-direction: column;
+        margin: 0 8%;
+        max-width: 100%;
+    }
+    .main-left-container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        gap: 20px;
+        height: 100%;
+        max-width: 100%;
+        margin-top: 10%;
+    }
+    .main-element {
+        max-width: 100%;
+    }
+    .main-middle-container {
+        max-width: 100%;
+        margin: 0;
+    }
+    h2 {
+        font-size: 40px;
+    }
+    p {
+        font-size: 30px;
+        line-height: 40px;
+    }
+    span {
+        font-size: 30px;
+    }
+
+    h2::before {
+        left: -33px;
+    }
+
+    .link-discord {
+        display: none;
+    }
+    .link-discord-mobile {
+        display: inline;
+        color: #3b5af5;
+    }
+
+    .span-before {
+        font-size: 40px;
+    }
+    .link-hover {
+        font-size: 30px;
+    }
+    .span-before::before {
+        left: -30px;
+    }
+    .for-mobile {
+        display: inline;
+    }
+    h1 {
+        font-size: 60px;
+    }
+    .switcher {
+        padding: 30px 60px;
+    }
+}
